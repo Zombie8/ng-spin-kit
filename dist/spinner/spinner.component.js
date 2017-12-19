@@ -1,3 +1,4 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7,7 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Component, Input } from '@angular/core';
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
 var SpinnerComponent = (function () {
     function SpinnerComponent() {
         this.visible = true;
@@ -50,27 +52,27 @@ var SpinnerComponent = (function () {
     SpinnerComponent.prototype.ngOnDestroy = function () {
         this.cancel();
     };
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Number)
+    ], SpinnerComponent.prototype, "delay", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", String)
+    ], SpinnerComponent.prototype, "color", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Boolean),
+        __metadata("design:paramtypes", [Boolean])
+    ], SpinnerComponent.prototype, "isRunning", null);
+    SpinnerComponent = __decorate([
+        core_1.Component({
+            selector: 'spinner',
+            template: ''
+        })
+    ], SpinnerComponent);
     return SpinnerComponent;
 }());
-__decorate([
-    Input(),
-    __metadata("design:type", Number)
-], SpinnerComponent.prototype, "delay", void 0);
-__decorate([
-    Input(),
-    __metadata("design:type", String)
-], SpinnerComponent.prototype, "color", void 0);
-__decorate([
-    Input(),
-    __metadata("design:type", Boolean),
-    __metadata("design:paramtypes", [Boolean])
-], SpinnerComponent.prototype, "isRunning", null);
-SpinnerComponent = __decorate([
-    Component({
-        selector: 'spinner',
-        template: ''
-    })
-], SpinnerComponent);
-export { SpinnerComponent };
-export var SpinnerTemplate = "\n  <div [hidden]=\"!visible\" [ngClass]=\"baseClass\">\n      <div *ngFor=\"let item of items; let i = index\" [ngClass]=\"childClass + (i+1)\" [style.backgroundColor]=\"color\"></div>\n  </div>\n";
+exports.SpinnerComponent = SpinnerComponent;
+exports.SpinnerTemplate = "\n  <div [hidden]=\"!visible\" [ngClass]=\"baseClass\">\n      <div *ngFor=\"let item of items; let i = index\" [ngClass]=\"childClass + (i+1)\" [style.backgroundColor]=\"color\"></div>\n  </div>\n";
 //# sourceMappingURL=spinner.component.js.map

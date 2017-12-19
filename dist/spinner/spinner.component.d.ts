@@ -12,4 +12,4 @@ export declare class SpinnerComponent implements OnDestroy {
     readonly items: any[];
     ngOnDestroy(): any;
 }
-export declare const SpinnerTemplate: string;
+export declare const SpinnerTemplate = "\n  <div [hidden]=\"!visible\" [ngClass]=\"baseClass\">\n      <div *ngFor=\"let item of items; let i = index\" [ngClass]=\"childClass + (i+1)\" [style.backgroundColor]=\"color\"></div>\n  </div>\n";
